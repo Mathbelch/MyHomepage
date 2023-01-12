@@ -1,0 +1,302 @@
+body {
+    background-color: #282828;
+}
+
+footer {
+    color:#C0C0C0;
+    font-size: 0.75em;
+    text-align: center;
+    font-style: italic;
+    position: bottom;
+}
+
+/* Page 1: PRESENTATION CARD */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+.card,
+.card::after,
+.card::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.card {
+	font-family: 'Bai Jamjuree', sans-serif;
+	font-size: 1.125rem;
+	height: 90vh;
+	display: grid;
+	place-items: center;
+	background-color: #282828;
+	color: #BFBFBF;
+}
+
+#mainContainer {
+	display: flex;
+	width: 90%;
+	max-width: 1100px;
+	align-items: center;
+	gap: 2rem;
+}
+
+.myself img {
+	width: 350px;
+	height: 350px;
+	object-fit: cover;
+	clip-path: circle(50% at 50% 50%);
+	filter: grayscale(0.7);
+	transition: all 300ms ease-in-out; /*To give it color when the mouses passes over it */
+	border-radius: 50%;
+	border: 4px solid aqua;
+}
+
+.myself img:hover {
+	filter: grayscale(0);
+}
+
+.me {
+	margin-bottom: 2rem;
+}
+
+.name {
+	font-size: 900;
+	font-size: 2rem;
+}
+
+.location {
+	font-weight: 400;
+}
+
+.description {
+	margin-bottom: 1rem;
+	text-align: justify;
+}
+
+.media {
+	margin-left: 0.6rem;
+	margin-bottom: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 1.3rem;
+}
+
+.links {
+	text-decoration: none;
+	opacity: 0.2;
+	transition: all 300ms ease-in-out;
+}
+
+.links:hover{
+	opacity: 0.9;
+}
+
+svg {
+	width: 35px;
+}
+
+@media (max-width: 900px) {
+	#mainContainer {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 550px) {
+	.myself img{
+		width: 250px;
+		height: 250px;
+	}
+}
+
+/* Page 2: TIMELINE */
+
+#page2 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  background-color: #282828;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline ul {
+  list-style: none;
+}
+
+.timeline ul li {
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content h1 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 350;
+  text-align: justify;
+  font-family: "Courier New", monospace;
+}
+
+@media only screen and (min-width: 768px) {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+  }
+
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+
+  .timeline ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 0px;
+  }
+
+  .timeline ul li:nth-child(odd)::before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+
+  .timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+  }
+
+  .timeline ul li:hover::before {
+    background-color: aqua;
+  }
+}
+
+/* Page 3: VIDEO CARROUSEL */
+
+.subtitle {
+  background-Color: #282828;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#projectExplanation {
+  margin-bottom: 0;
+}
+
+.containerPage3 {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerPage3 .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+}
+
+
+.containerPage3 ul {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+
+.containerPage3 ul li {
+  list-style: none;
+  cursor: pointer;
+  margin: 10px;
+  opacity: 60%;
+}
+
+.containerPage3 ul li:hover {
+  opacity: 100%;
+}
+
+.containerPage3 ul li video {
+  width: 200px;
+  transition: all 0.3s;
+}
+.containerPage3 ul li video:hover {
+  transform: scale(1.1);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Page 4: ALGORITHMS CARDS */
